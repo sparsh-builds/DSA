@@ -35,3 +35,7 @@ Compare,            s1 == s2,                           s1.equals(s2)           
 Find,"              s.find(""a"")",                     "s.indexOf(""a"")",                     "s.find(""a"")"
 Reverse,"           reverse(s.begin(), s.end())",        new StringBuilder(s).reverse(),         s[::-1]
 
+
+
+
+

@@ -3,7 +3,8 @@
 
 # To find the next permutation, identify the first decreasing element from the right, swap it with the next larger element on its right, then reverse the remaining suffix.
 
-# This algorithm finds the lexicographically next greater permutation of numbers in-place in $O(n)$ time and $O(1)$ extra space.
+# This algorithm finds the lexicographically next greater permutation of numbers in-place in 
+# $O(n)$ time and $O(1)$ extra space.
 
 def nextpermutation(arr):
     n=len(arr) 
@@ -16,10 +17,10 @@ def nextpermutation(arr):
     # if entire array is desc , i will be -1
     if i>=0:
         j=n-1
-        while arr[j]<=arr[i]:
+        while arr[j]<=arr[i]:  # kisse swap krna hai wo find krne k liye next bda element 
             j-=1
             
-            arr[i],arr[j] =arr[j],arr[i]
+        arr[i],arr[j] =arr[j],arr[i]
     arr[i+1:] = reversed(arr[i+1:])
     
     

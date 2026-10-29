@@ -43,9 +43,9 @@ def  method2(arr,k):
 
 
     
-Array Rotations is a transformation where the array is rotated k times to the right or left, causing elements to shift cyclically. This operation can be done efficiently in-place.
+# Array Rotations is a transformation where the array is rotated k times to the right or left, causing elements to shift cyclically. This operation can be done efficiently in-place.
 
-To rotate the array, reverse the last k elements, reverse the first n − k elements, and finally reverse the entire array.
+# To rotate the array, reverse the last k elements, reverse the first n − k elements, and finally reverse the entire array.
 
 
 
@@ -69,6 +69,13 @@ def rotateclockwise(arr, k):
     
 
 
+
+# [1,2,3,4,5]  => [4,5,1,2,3]  k=2 as 2 positions to the right 1 step -> 5.4  2nd step 3,2,1 3rd step -> 4,5,1,2,3
+
+
+# also [5,4,3,2,1]=> 4,5 and 1,2,3
+
+# for left rotation we can use the same logic but with k=n-k
 def method3(arr,k):  # O(n) and O(1) space
     n=len(arr)
     k=k%n
@@ -89,3 +96,20 @@ if __name__=="__main__":
     print(method2(arr2,k))
     print(method3(arr3,k))
         
+        
+3 Ques
+
+class Solution:
+    def rotateclockwise(self, arr, k):
+        # code here
+        k=k%len(arr)
+        arr[:] =reversed(arr[:])
+        
+        arr[:k] =reversed(arr[:k])
+        
+        arr[k:] =reversed(arr[k:])
+        
+        return arr
+        
+        
+#

@@ -1,0 +1,3 @@
+Basics of Hashing
+Hashing is a technique used to map data to a fixed-size value (called a hash) for efficient lookup, insertion, and deletion. It's widely used in data structures like hash tables, sets, and maps.
+

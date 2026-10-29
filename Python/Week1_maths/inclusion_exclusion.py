@@ -15,4 +15,3 @@ class Solution:
                 seen.add(i)
                     
         return len(seen)            
-                    
