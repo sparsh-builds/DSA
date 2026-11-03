@@ -42,9 +42,12 @@
 
 # [Expected Approach 2] Reversing Rows and Transposing - O(n^2) Time and O(1) Space
 
+
+
 # [Naive Approach] Using Extra Space - O(n^2) Time and O(n^2) Space
 
 # We mainly need to move first row elements to first column in reverse order, 
+
 # second row elements to second column in reverse order and so on.
 
 # Let us first try to find out a pattern to solve the problem for n = 4 (second example matrix above)
@@ -53,6 +56,8 @@
 # mat[0][1] goes to mat[2][0]
 # mat[1][0] goes to mat[3][1]
 # mat[3][3] goes to mat[0][3]
+
+
 # Do you see a pattern? Mainly we need to move mat[i][j] to mat[n-j-1][i]. 
 # We first move elements in a temporary matrix, then copy the temporary to the original. 
 # If we directly copy elements within the matrix, it would cause data loss.
@@ -100,7 +105,9 @@ if __name__ == "__main__":
 
 
 # [Expected Approach 1] Forming Cycles - O(n ^2) Time and O(1) Space
+
 # To solve the question without any extra space, rotate the array in form of cycles. For example, 
+
 # a 4 X 4 matrix will have 2 cycles. The first cycle is formed by its 1st row, last column, last row, and 1st column. The second cycle is formed by the 2nd row, second-last column, second-last row, and 2nd column. The idea is for each square cycle, to swap the elements involved with the corresponding cell in the matrix in an anticlockwise direction i.e. from top to left, left to bottom, bottom to right, and from right to top one at a time using nothing but a temporary variable to achieve this.
 
 # rotate_square_matrix_by_90_degrees_counterclockwise_1.webprotate_square_matrix_by_90_degrees_counterclockwise_1.webp
@@ -109,9 +116,13 @@ if __name__ == "__main__":
 # Step By Step Algorithm:
 
 # There are n/2 squares or cycles in a matrix of side n. Process one square at a time. Use a
+
 # loop to traverse the matrix cycle by cycle, i.e., loop from 0 to n/2−1, where the loop counter is i.
+
 # Consider elements in group of 4 in current square and rotate the four elements at a time.
+
 # Now run a loop in each cycle from i to n - i - 1 where the loop counter is j.
+
 # The elements in the current group are P1 (i, j), P2 (j, n-1-i), P3 (n-1-i, n-1-j) and P4 (n-1-j, i), now rotate these 4 elements, i.e. temp <- P1, P1 <- P2, P2<- P3, P3<- P4, P4<-temp.
 
 
@@ -159,6 +170,7 @@ if __name__ == "__main__":
 
 # Reverse every individual row of the matrix
 # Perform Transpose of the matrix
+
 # Note: We can also rotate the matrix by first performing the transpose and then reversing every column of the matrix.
 
 # Clockwise 90° Rotation: Transpose the matrix, then reverse each row.
